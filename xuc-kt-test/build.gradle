@@ -1,0 +1,20 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+    id "com.google.devtools.ksp"
+}
+
+apply plugin: "kotlin-kapt";
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs "$rootDir.path/xuc_kt/build/libs/"
+    }
+}
+
+dependencies {
+    kotlinCompilerPluginClasspath "me.xwashere:xuc_kt:1.0.1"
+    ksp "me.xwashere:xuc_kt:1.0.1"
+
+    implementation project(":xuc-kt-annotations")
+}

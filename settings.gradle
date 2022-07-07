@@ -1,0 +1,23 @@
+pluginManagement {
+    plugins {
+        id "com.google.devtools.ksp"  version "1.6.21-1.0.5"
+        id "org.jetbrains.kotlin.jvm" version "1.6.21"
+    }
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'xuc-kt'
+
+include ":xuc_kt"
+include ":xuc-kt-annotations"
+include ":xuc-kt-test"

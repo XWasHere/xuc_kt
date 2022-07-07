@@ -1,0 +1,26 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+}
+
+apply plugin: "kotlin-kapt";
+
+version = "1.0.1"
+
+dependencies {
+    implementation project(":xuc-kt-annotations")
+    implementation 'com.google.devtools.ksp:symbol-processing-api:1.6.21-1.0.5'
+
+    compileOnly 'com.google.auto.service:auto-service:1.0.1';
+    compileOnly "org.jetbrains.kotlin:kotlin-compiler-embeddable";
+
+    kapt 'com.google.auto.service:auto-service:1.0.1';
+}
+
+repositories {
+    mavenCentral()
+}
+
+compileJava {
+    targetCompatibility = "1.8"
+    sourceCompatibility = "1.8"
+}
